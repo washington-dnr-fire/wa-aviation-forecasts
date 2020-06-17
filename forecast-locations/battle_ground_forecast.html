@@ -32,6 +32,18 @@
           return result
         }
 
+         //Both functions below seek to convert unix time to local time, but have been unsuccessful
+         function convertTimetoLocalTime(unixstamp) {
+          var d = new Date(unixstamp);
+          var n = d.getTimezoneOffset()*60*1000;
+          var offset = d.getTimezoneOffset() / 60;
+          var hours = d.getHours();
+
+          d.setHours(hours - offset);
+
+          return d
+        }
+         
         function convertTimetoLocal(unixstamp) {
           var d = new Date(unixstamp);
           var n = d.toLocaleTimeString();
@@ -41,6 +53,9 @@
  
         var CurrentDay = convertTimestamptoDayofWeek(response.current.dt);
         $("#CurrentDay").append(CurrentDay);
+         
+        var LocalTime = convertTimetoLocal(response.current.dt);
+        $("#LocalTime").append(LocalTime);
 
         var CurrentTime = convertTimestamptoTime(response.current.dt);
         $("#CurrentTime").append(CurrentTime);
@@ -200,7 +215,7 @@
       <table border=0 width=400 cellpadding=5 cellspacing=0 align=center>
         <tr align=center><td bgcolor="e1e1e1">
           <h3><u>Current Weather</u></h3>
-          <span id="CurrentDay"></span><span id="CurrentTime"></span><br/>
+          <span id="CurrentDay"></span><span id="CurrentTime"></span><span id="LocalTime"></span><br/>
           <p></p>
           <span>Temperature: </span><span id="CurrentTemp"></span><span id="Temp_unit"></span><br/>
           <span>Cloud Cover: </span><span id="CurrentClouds"></span><span id="Cloud_cover_unit"></span><br/>
