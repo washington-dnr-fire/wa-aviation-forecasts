@@ -44,6 +44,11 @@
 
         var CurrentTime = convertTimestamptoTime(response.current.dt);
         $("#CurrentTime").append(CurrentTime);
+         
+        var CurrentIconCode = response.current.weather[0].icon;
+
+        var CurrentIconURL = "http://openweathermap.org/img/wn/" + CurrentIconCode + "@2x.png";
+        $('#wicon').attr('src', CurrentIconURL);
 
         var CurrentTemp = Math.round(response.current.temp);
         $("#CurrentTemp").append(CurrentTemp);
@@ -55,7 +60,7 @@
 
         var CurrentConditions = response.current.weather[0].description;
         $("#CurrentConditions").append(CurrentConditions);
-
+         
         var CurrentRH = response.current.humidity;
         $("#CurrentRH").append(CurrentRH);
         $("#RH_unit").append("%");
@@ -96,6 +101,11 @@
 
         var TodayDate = convertTimestamptoDate(response.daily[0].dt);
         $("#TodayDate").append(TodayDate);
+         
+        var TodayIconCode = response.daily[0].weather[0].icon;
+
+        var TodayIconURL = "http://openweathermap.org/img/wn/" + TodayIconCode + ".png";
+        $('#wicon1').attr('src', TodayIconURL);
 
         var TodayMaxTemp = Math.round(response.daily[0].temp.max);
         $("#TodayMaxTemp").append(TodayMaxTemp);
@@ -129,6 +139,11 @@
 
         var TomorrowDate = convertTimestamptoDate(response.daily[1].dt);
         $("#TomorrowDate").append(TomorrowDate);
+         
+        var TomorrowIconCode = response.daily[1].weather[0].icon;
+
+        var TomorrowIconURL = "http://openweathermap.org/img/wn/" + TomorrowIconCode + ".png";
+        $('#wicon2').attr('src', TomorrowIconURL);
 
         var TomorrowMaxTemp = Math.round(response.daily[1].temp.max);
         $("#TomorrowMaxTemp").append(TomorrowMaxTemp);
@@ -162,6 +177,11 @@
 
         var Day3Date = convertTimestamptoDate(response.daily[2].dt);
         $("#Day3Date").append(Day3Date);
+         
+        var Day3IconCode = response.daily[2].weather[0].icon;
+
+        var Day3IconURL = "http://openweathermap.org/img/wn/" + Day3IconCode + ".png";
+        $('#wicon3').attr('src', Day3IconURL);
 
         var Day3MaxTemp = Math.round(response.daily[2].temp.max);
         $("#Day3MaxTemp").append(Day3MaxTemp);
@@ -192,6 +212,9 @@
       });
 
       </script>
+      
+      <!--FontAwesome Script-->
+      <script src="https://kit.fontawesome.com/8bcc238336.js" crossorigin="anonymous"></script>
    </head>
    <body bgcolor="#FCFCFC">
       <h1 Align=center style="color:red">Current Weather & 3-Day Forecasts</h1>
@@ -202,6 +225,7 @@
           <h3><u>Current Weather</u></h3>
           <span id="CurrentDay"></span><span id="CurrentTime"></span><br/>
           <p></p>
+          <div id="icon"><img id="wicon" src="" alt="Weather icon"></div><br/> 
           <span>Temperature: </span><span id="CurrentTemp"></span><span id="Temp_unit"></span><br/>
           <span>Cloud Cover: </span><span id="CurrentClouds"></span><span id="Cloud_cover_unit"></span><br/>
           <span>Current Conditions: </span><span id="CurrentConditions"></span><br/>
@@ -220,6 +244,7 @@
             <h4><u>Today's Forecast</u></h4>
             <span id="TodayDayofWeek"></span><span id="TodayDate"></span><br/>
             <p></p>
+            <div id="icon"><img id="wicon1" src="" alt="Weather icon"></div><br/>
             <span>High Temperature: </span><span id="TodayMaxTemp"></span><span id="TodayMaxTemp_unit"></span><br/>
             <span>Low Temperature: </span><span id="TodayMinTemp"></span><span id="TodayMinTemp_unit"></span><br/>
             <span>Cloud Cover: </span><span id="TodayClouds"></span><span id="Today_Cloud_cover_unit"></span><br/>
@@ -232,6 +257,7 @@
             <h4><u>Tommorrow's Forecast</u></h4>
             <span id="TomorrowDayofWeek"></span><span id="TomorrowDate"></span><br/>
             <p></p>
+            <div id="icon"><img id="wicon2" src="" alt="Weather icon"></div><br/>
             <span>High Temperature: </span><span id="TomorrowMaxTemp"></span><span id="TomorrowMaxTemp_unit"></span><br/>
             <span>Low Temperature: </span><span id="TomorrowMinTemp"></span><span id="TomorrowMinTemp_unit"></span><br/>
             <span>Cloud Cover: </span><span id="TomorrowClouds"></span><span id="Tomorrow_Cloud_cover_unit"></span><br/>
@@ -244,6 +270,7 @@
             <h4><u><span id="Day3DayofWeek"></span>'s Forecast</u></h4>
             <span id="Day3DayofWeek"></span><span id="Day3Date"></span><br/>
             <p></p>
+            <div id="icon"><img id="wicon3" src="" alt="Weather icon"></div><br/>
             <span>High Temperature: </span><span id="Day3MaxTemp"></span><span id="Day3MaxTemp_unit"></span><br/>
             <span>Low Temperature: </span><span id="Day3MinTemp"></span><span id="Day3MinTemp_unit"></span><br/>
             <span>Cloud Cover: </span><span id="Day3Clouds"></span><span id="Day3_Cloud_cover_unit"></span><br/>
