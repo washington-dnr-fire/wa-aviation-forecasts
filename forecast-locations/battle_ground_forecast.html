@@ -1,8 +1,13 @@
-﻿<html>
-   <meta charset="UTF-8">
+﻿
+<!DOCTYPE html>
+<html>
    <head>
       <title>Battle Ground Forecast</title>
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
       <script>
       var settings = {
         "url": "https://api.openweathermap.org/data/2.5/onecall?lat=45.7672192&lon=-122.5256861&appid=f84507e41b97f2982944724f01ebee4e&units=imperial&exclude=minutely,hourly",
@@ -217,9 +222,11 @@
       <script src="https://kit.fontawesome.com/8bcc238336.js" crossorigin="anonymous"></script>
    </head>
    <body bgcolor="#FCFCFC">
+     <div class="jumpotron text-center">
       <h1 Align=center style="color:red">Current Weather & 3-Day Forecasts</h1>
       <h2 Align=center>Battle Ground, WA</h2>
-      <p align=center><a href= 'https://home.chpc.utah.edu/~u0813495/wa_dnr_intern/aviation_forecasts/aviation_forecasts.html'> <font>Back to Forecast Locations</font></a></p>
+     </div>
+      <p align=center><a class="btn btn-danger" href= 'https://home.chpc.utah.edu/~u0813495/wa_dnr_intern/aviation_forecasts/aviation_forecasts.html'> <font>Back to Forecast Locations</font></a></p>
       <table border=0 width=400 cellpadding=5 cellspacing=0 align=center>
         <tr align=center><td bgcolor="e1e1e1">
           <h3><u>Current Weather</u></h3>
@@ -238,9 +245,9 @@
       <p></p><br>
       <p></p>
       <h3 align=center><u>3-Day Forecast</u></h3>
-      <table border="1" align=center style="width:75%">
-        <tr>
-          <td style="width:25%">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-4" style="background-color:rgb(245, 138, 138);height:300px">
             <h4><u>Today's Forecast</u></h4>
             <span id="TodayDayofWeek"></span><span id="TodayDate"></span><br/>
             <p></p>
@@ -252,8 +259,8 @@
             <span>Relative Humidity: </span><span id="TodayRH"></span><span id="Today_RH_unit"></span><br/>
             <span>Winds: </span><span id="TodayWindSpeed"></span><span id="Today_WindSpeed_unit"></span><span id="TodayWindDirection"></span><br/>
             <p></p>
-          </td>
-          <td style="width:25%">
+          </div>
+          <div class="col-sm-4" style="background-color:rgb(138, 188, 245);height:300px">
             <h4><u>Tommorrow's Forecast</u></h4>
             <span id="TomorrowDayofWeek"></span><span id="TomorrowDate"></span><br/>
             <p></p>
@@ -265,8 +272,8 @@
             <span>Relative Humidity: </span><span id="TomorrowRH"></span><span id="Tomorrow_RH_unit"></span><br/>
             <span>Winds: </span><span id="TomorrowWindSpeed"></span><span id="Tomorrow_WindSpeed_unit"></span><span id="TomorrowWindDirection"></span><br/>
             <p></p>
-          </td>
-          <td style="width:25%">
+          </div>
+          <div class="col-sm-4" style="background-color:rgb(138, 245, 152);height:300px">
             <h4><u><span id="Day3DayofWeek"></span>'s Forecast</u></h4>
             <span id="Day3DayofWeek"></span><span id="Day3Date"></span><br/>
             <p></p>
@@ -278,8 +285,9 @@
             <span>Relative Humidity: </span><span id="Day3RH"></span><span id="Day3_RH_unit"></span><br/>
             <span>Winds: </span><span id="Day3WindSpeed"></span><span id="Day3_WindSpeed_unit"></span><span id="Day3WindDirection"></span><br/>
             <p></p>
-          </td>
-        </tr>
+          </div>
+        </div>
+      </div>
 
    </body>
 </html>
