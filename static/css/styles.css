@@ -1,0 +1,55 @@
+html, body, #mapdiv{
+    height:100%;
+    font-family: 'Lato', sans-serif;
+}
+
+#mapdiv{
+    height:275px;
+}
+
+.navbar{
+    padding: 0;
+}
+
+.text-dnr-blue{
+    color: #33709e;
+}
+
+.current_temp{
+    font-size: 4rem;
+    font-weight: bold;
+    line-height: 1;
+}
+
+#weather_icon{
+    font-size:5rem;
+    color: #000000;
+}
+
+.table > tbody > tr > td {
+    vertical-align: middle;
+}
+
+.top-align{
+    vertical-align: top !important;
+}
+
+.myDivIcon {
+    text-align: center; /* Horizontally center the text (icon) */
+    line-height: 20px; /* Vertically center the text (icon) */
+  }
+
+  .table{
+      margin-bottom: 0;
+  }
+
+.foot-col{
+    background-color: #F7F7F7;
+    box-shadow: 0 100vh 0 100vh #F7F7F7;
+
+}
+
+.title{
+    display: inline-block !important;
+
+}

@@ -24,6 +24,16 @@
             return time
         }
 
+        function convertTimestamptoDate(unixTimestamp) {  
+        
+        // convert to milliseconds and  
+        // then create a new Date object 
+        var dateObj = new Date(unixTimestamp * 1000); 
+        var utcString = dateObj.toUTCString(); 
+
+        var time = utcString.slice(-25, -12);
+        return time
+}
         function convertTimestamptoDayofWeek(unixTime) {
 
           var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']; 
